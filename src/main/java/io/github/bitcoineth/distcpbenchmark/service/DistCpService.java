@@ -36,6 +36,8 @@ public final class DistCpService {
         List<String> command = new ArrayList<>();
         command.add(hadoopBinary);
         command.add("distcp");
+        command.add("-Dmapreduce.framework.name=local");
+        command.add("-Dmapreduce.jobtracker.address=local");
         command.add("-update");
         command.add(source.toString());
         command.add(target.toString());
